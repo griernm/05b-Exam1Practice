@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Nathalie Grier.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -38,7 +38,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -149,6 +149,18 @@ def run_test_problem1a():
     #   print('       actual:  ', actual)
     # -------------------------------------------------------------------------
 
+    # Test 3:
+    expected = 10
+    actual = problem1a(2, 7)
+    print('Test 3 expected: ', expected)
+    print('         actual: ', actual)
+
+    # Test 4:
+    expected = 10
+    actual = problem1a(8, 16)
+    print('Test 3 expected: ', expected)
+    print('         actual: ', actual)
+
 
 def problem1a(m, n):
     """
@@ -176,7 +188,11 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
-
+    import math
+    v = 0
+    for k in range(n ** 2 - m **2):
+        v = v + math.sin(k)
+    return v
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
