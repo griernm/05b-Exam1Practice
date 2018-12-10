@@ -106,7 +106,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # -------------------------------------------------------------------------
@@ -150,15 +150,15 @@ def run_test_problem1a():
     # -------------------------------------------------------------------------
 
     # Test 3:
-    expected = 10
+    expected = -1.72863
     actual = problem1a(2, 7)
     print('Test 3 expected: ', expected)
     print('         actual: ', actual)
 
     # Test 4:
-    expected = 10
+    expected = 0.35547
     actual = problem1a(8, 16)
-    print('Test 3 expected: ', expected)
+    print('Test 4 expected: ', expected)
     print('         actual: ', actual)
 
 
@@ -190,8 +190,8 @@ def problem1a(m, n):
     # -------------------------------------------------------------------------
     import math
     v = 0
-    for k in range(m ** 2, n **2):
-        v = v + math.sin(k)
+    for k in range(n ** 2 + 1 - m ** 2):
+        v = v + math.sin(k + m ** 2)
     return v
 
 def run_test_problem1b():
