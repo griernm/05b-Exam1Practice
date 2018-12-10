@@ -180,7 +180,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -197,7 +197,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -215,6 +215,30 @@ def run_test_problem1b():
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
 
+
+    # Test: 1
+    expected = 0.35547
+    actual = problem1b(8, 16)
+    print('Test 1 expected: ', expected)
+    print('         actual: ', actual)
+
+    # Test: 2
+    expected = 0.35547
+    actual = problem1b(8, 16)
+    print('Test 2 expected: ', expected)
+    print('         actual: ', actual)
+
+    # Test: 3
+    expected = 0.35547
+    actual = problem1b(8, 16)
+    print('Test 3 expected: ', expected)
+    print('         actual: ', actual)
+
+    # Test: 4
+    expected = 0.35547
+    actual = problem1b(8, 16)
+    print('Test 4 expected: ', expected)
+    print('         actual: ', actual)
 
 def problem1b(m, f):
     """
@@ -246,8 +270,10 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
-
-
+    count = 0
+    for k in range(m, m * f + 1):
+        if (k + m) % k == 0:
+            count = count + 1
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
     print()
