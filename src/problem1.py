@@ -190,7 +190,7 @@ def problem1a(m, n):
     # -------------------------------------------------------------------------
     import math
     v = 0
-    for k in range(n ** 2 - m **2):
+    for k in range(m ** 2, n **2):
         v = v + math.sin(k)
     return v
 
