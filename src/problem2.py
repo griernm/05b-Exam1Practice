@@ -114,16 +114,12 @@ def problem2a(circle, rectangle, window):
 
     circle.attach_to(window)
     rectangle.attach_to(window)
-    window.render()
-    window.close_on_mouse_click()
 
     point1 = rg.Point(rectangle.get_upper_right_corner().x, rectangle.get_upper_right_corner().y)
     point2 = rg.Point(rectangle.get_lower_left_corner().x, rectangle.get_lower_left_corner().y)
     line = rg.Line(point1, point2)
     line.arrow = 'last'
     line.attach_to(window)
-    window.render()
-    window.close_on_mouse_click()
 
     circle.fill_color = rectangle.outline_color
     circle.attach_to(window)
@@ -202,7 +198,11 @@ def problem2b(rect, n, delta, win):
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
 
-
+    rect.attach_to(win)
+    for k in range(n + 1):
+        rectangles = rg.Rectangle(rg.Point(rect._upper_left_corner.x * (k + 1) * delta, rect._upper_left_corner.y * (k + 1) * delta), rg.Point(rect.get_lower_right_corner().x * (k + 1) * delta, rect.get_lower_right_corner().y * (k + 1) * delta))
+        rectangles.attach_to(win)
+    win.render()
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
