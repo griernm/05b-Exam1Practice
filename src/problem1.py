@@ -217,28 +217,29 @@ def run_test_problem1b():
 
 
     # Test: 1
-    expected = 0.35547
-    actual = problem1b(8, 16)
+    expected = 4
+    actual = problem1b(1, 5)
     print('Test 1 expected: ', expected)
     print('         actual: ', actual)
 
     # Test: 2
-    expected = 0.35547
-    actual = problem1b(8, 16)
+    expected = 4
+    actual = problem1b(2, 5)
     print('Test 2 expected: ', expected)
     print('         actual: ', actual)
 
     # Test: 3
-    expected = 0.35547
-    actual = problem1b(8, 16)
+    expected = 6
+    actual = problem1b(4, 5)
     print('Test 3 expected: ', expected)
     print('         actual: ', actual)
 
     # Test: 4
-    expected = 0.35547
-    actual = problem1b(8, 16)
+    expected = 3
+    actual = problem1b(1, 3)
     print('Test 4 expected: ', expected)
     print('         actual: ', actual)
+
 
 def problem1b(m, f):
     """
@@ -257,7 +258,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ###########################################################################
@@ -271,9 +272,11 @@ def problem1b(m, f):
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
     count = 0
-    for k in range(m, m * f + 1):
-        if (k + m) % k == 0:
+    for k in range(m * f + 1 - m):
+        if is_prime(k + m):
             count = count + 1
+    return count
+
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
     print()
@@ -370,7 +373,11 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # -------------------------------------------------------------------------
-
+    v = 1
+    for k in range(n + 1):
+        if is_prime(k) and k > 0:
+            v = v * (k)
+    return sum_of_digits(v)
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
