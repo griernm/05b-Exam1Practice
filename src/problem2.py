@@ -31,7 +31,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem2a()
+    # run_test_problem2a()
     run_test_problem2b()
 
 
@@ -112,16 +112,29 @@ def problem2a(circle, rectangle, window):
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
 
-    circle.attach_to(window)
-    rectangle.attach_to(window)
+    window2 = rg.RoseWindow(450, 250)
+    circle.attach_to(window2)
+    rectangle.attach_to(window2)
+    window2.render()
+    window2.close_on_mouse_click()
+
+
 
     point1 = rg.Point(rectangle.get_upper_right_corner().x, rectangle.get_upper_right_corner().y)
     point2 = rg.Point(rectangle.get_lower_left_corner().x, rectangle.get_lower_left_corner().y)
     line = rg.Line(point1, point2)
     line.arrow = 'last'
-    line.attach_to(window)
+    window1 = rg.RoseWindow(450, 250)
+    line.attach_to(window1)
+    circle.attach_to(window1)
+    rectangle.attach_to(window1)
+    window1.render()
+    window1.close_on_mouse_click()
+
 
     circle.fill_color = rectangle.outline_color
+    circle.attach_to(window)
+    rectangle.attach_to(window)
     circle.attach_to(window)
     window.render()
 
@@ -198,11 +211,15 @@ def problem2b(rect, n, delta, win):
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
 
-    rect.attach_to(win)
+
     for k in range(n + 1):
-        rectangles = rg.Rectangle(rg.Point(rect._upper_left_corner.x * (k + 1) * delta, rect._upper_left_corner.y * (k + 1) * delta), rg.Point(rect.get_lower_right_corner().x * (k + 1) * delta, rect.get_lower_right_corner().y * (k + 1) * delta))
-        rectangles.attach_to(win)
-    win.render()
+        rect.attach_to(win)
+        corn1 = rg.Point(rect.corner_1.x * (k + 1) * delta, rect.corner_1.y * (k + 1) * delta)
+        corn2 = rg.Point(rect.corner_2.x * (k + 1) * delta, rect.corner_2.y * (k + 1) * delta)
+        rectangle = rg.Rectangle(corn1, corn2)
+        rectangle.attach_to(win)
+        win.render()
+
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
