@@ -214,8 +214,8 @@ def problem2b(rect, n, delta, win):
 
     for k in range(n + 1):
         rect.attach_to(win)
-        corn1 = rg.Point(rect.corner_1.x * (k + 1) * delta, rect.corner_1.y * (k + 1) * delta)
-        corn2 = rg.Point(rect.corner_2.x * (k + 1) * delta, rect.corner_2.y * (k + 1) * delta)
+        corn1 = rg.Point(rect.corner_1.x + (k + 1) * delta, rect.corner_1.y + (k + 1) * delta)
+        corn2 = rg.Point(rect.corner_2.x + (k + 1) * delta, rect.corner_2.y + (k + 1) * delta)
         rectangle = rg.Rectangle(corn1, corn2)
         rectangle.attach_to(win)
         win.render()
